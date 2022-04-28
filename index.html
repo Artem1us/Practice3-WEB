@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+	<title>Practice 3</title>
+	<meta charset="utf-8">
+</head>
+
+<!--тег form встановлює форму на сторінці, ця форма дозволяє обмінювати даними між клієнтом та сервером. Атрибут action відповідає звідки саме полетять дані. Атрибут method  це метод передачі даних, він має два значення get це передача даних в адресній строці, він для передачі малої кількості даних та значення post він передає дані скритно використовуючі запрос браузера, дозволяє відправити набагато більше даних, наприклад якщо ми хочемо закріпити файл. Значення # це заглушка. Атрибут enctype це спосіб кодування даних при їх надсиланні на сервер-->
+
+<!--тег colspan відповідає за кількість зайнятих клітинок клітинкою по горизонталі-->
+
+<!--tr відповідає за рядок, td/th за стовпці-->
+
+<body>
+	<form action="#" method="get" enctype="multipart/form-data">
+		<table border="1">
+
+			<tr>
+				<th colspan="2">Pizza Shop 2.0</th>
+			</tr>
+
+<!--тег input це і є головний елемент форми, що дає змогу взаємодіяти з клієнтом, атрибут text відповідає за строку ввода, size атрибут відповідає за довжну цієї строки. Атрибут type відповідає за метод прийнятих файлів від користувача. Атрибут required це валідатор, що вказує на елемент форми, який повинен бути заповненим. Атрибут placeholder вказує на підсказку у текстовому елементі форми. Атрибут pattern відповідає за введені символи, тобто A-Z латинські великі літери a-z лат маленькі А-Я кирилиця великі а-я кирилиця маленькі ґҐЁёІіЇїЄє'’ʼ символи що присвоєні до української мови, включаючі різні варіанти апострофів, \s пробіл - та дефіс. {2,25} це обмеження у введені символів, від 2 до 25 включно -->
+
+			<tr>
+				<td>Name</td>
+				<td><input type="text" size="20" required placeholder="Enter text" pattern="[A-Za-zА-Яа-яґҐЁёІіЇїЄє'’ʼ\s-]{2,25}"></td>
+			</tr>
+
+<!--атрибут radio це перемикач, використовують коли треба обрати один з декількох варіантів.  Атрибут name це назва групи перемикачів, так як перемикачі це груповий елемент, то і name групи повинен бути однаковим. Атрибут vulue вказує на значення, обране користувачем, що буде відправлене на сервер.-->
+
+<!--Тег div це коробка, взагалі він призначений для ділення веб сторінки на фрагменти -->
+
+			<tr>
+				<td>Pizza Topping</td>
+				<td>
+					<div>
+						<input required type="radio" name="pizza" value="Sup">Supreme <br>
+						<input required type="radio" name="pizza" value="Veg">Vegetarian <br>
+						<input required type="radio" name="pizza" value="Haw">Hawaiian <br>
+					</div>
+				</td>
+			</tr>
+
+<!--Тег select дозвол створити список, що розкривається. Тег option визначає пункти списку-->
+
+			<tr>
+				<td>Pizza Sauce</td>
+				<td>
+					<div>
+						<select name="Sauce">
+							<option value="Tommate">Tommate</option>
+							<option value="Chile">Chile</option>
+							<option value="Cheese">Cheese</option>
+							<option value="Mushroom">Mushroom</option>
+						</select>
+					</div>
+				</td>
+			</tr>
+
+<!--Checkbox (перемикач) це поле вводу, якому присвоєний атрибут type-->
+
+			<tr>
+				<td>Optional Extras</td>
+				<td>
+					<div>
+						<input type="checkbox" name="Ex cheese" value="yes">Extra Cheese
+						<input type="checkbox" name="Gluten" value="yes">Gluten Free Base
+					</div>
+				</td>
+			</tr>
+
+<!--Тег label встановлює зв*язок між текстом та елементом форми. Тег textarea це  область у яку можна вводити кілька рядків тексту. Можна робити переноси рядків, що також зберігатимуться при відправці на сервер. maxlength це атрибут що відповідає за кількість символів, що може бути введені користувачем у текстовому полі.-->
+
+<!--1500 символів це приблизно одна вордівська сторінка з 14 шрифтом-->
+
+			<tr>
+				<td colspan="2">
+					<div>
+						<label>Delivery Instructions: <br>
+						<textarea name="text" cols="45" rows="5" required placeholder="Enter text" maxlength="1500"></textarea>
+						</label>
+					</div>
+				</td>
+			</tr>
+
+<!-- Тег button створює клікабельну кнопку submit значення дозволяє відправити дані на сервер-->
+
+			<tr>
+				<td colspan="2">
+					<button type="submit">Send my Order</button>
+				</td>
+			</tr>
+
+		</table>
+	</form>
+</body>
+
+</html>
